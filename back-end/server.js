@@ -21,7 +21,7 @@ server.post('/signin', async (req, res) => {
   if (user.password !== password) {
     return res.status(401).send('Incorrect password');
   }
-  res.send('Sign-in successful');
+  res.send(user);
 });
 server.listen(3000, () => {
   console.log('Server is running on port 3000');
