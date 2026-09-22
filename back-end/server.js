@@ -1,5 +1,7 @@
 const express = require('express');
 const server = express();
+const cors = require('cors');
+server.use(cors());
 const pool = require('./db');
 server.use(express.json());
 server.get('/', async (req, res) => {
