@@ -25,7 +25,7 @@ function SignIn() {
           <h1 className='text-2xl font-bold'>Welcome back</h1>
           <p>Sign in to continue</p>
         </div>
-        <div className='flex flex-col gap-3 mt-5 ml-50 w-100'>
+        <div className='flex flex-col gap-3 mt-5 w-full md:w-100 md:ml-50'>
           <label htmlFor="email">Email</label>
           <input className='border border-gray-300 rounded-lg p-2 -mt-2 mb-2' type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" />
           <label htmlFor="password">Password</label>

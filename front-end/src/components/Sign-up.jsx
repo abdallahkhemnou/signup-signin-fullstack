@@ -6,12 +6,14 @@ function SignUp() {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
   const navigate = useNavigate();
   function handleSubmit() { 
     axios.post('http://localhost:3000/signup', { user_name: userName, email, password });
     setUserName('');
     setEmail('');
     setPassword('');
+    setConfirm('Account created successfully !');
   }
   return (
     <>
@@ -21,13 +23,14 @@ function SignUp() {
           <h1 className='text-2xl font-bold'>Create Account</h1>
           <p>start by filling in your details</p>
         </div>
-        <div className='flex flex-col gap-3 mt-5 ml-50 w-100'>
+        <div className='flex flex-col gap-3 mt-5 w-full md:w-100 md:ml-50'>
           <label htmlFor="user_name">User Name</label>
           <input className='border border-gray-300 rounded-lg p-2 -mt-2 mb-2' type="text" id="user_name" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder="Enter your name" />
           <label htmlFor="email">Email</label>
           <input className='border border-gray-300 rounded-lg p-2 -mt-2 mb-2' type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" />
           <label htmlFor="password">Password</label>
           <input className='border border-gray-300 rounded-lg p-2 -mt-2 mb-2' type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" />
+          <p className='text-green-600 text-sm mt-2'>{confirm}</p>
           <button className='bg-black text-white font-semibold rounded-lg p-2 mt-3 cursor-pointer' onClick={handleSubmit}>Sign up</button>
           <p className='text-sm text-center mt-3'>
             Already have an account? <span className='text-blue-600 cursor-pointer' onClick={() => navigate('/signin')}>Sign in</span>
