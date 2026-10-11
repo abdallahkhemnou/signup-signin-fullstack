@@ -18,7 +18,7 @@ function SignUp() {
   return (
     <>
       <div className="flex flex-col items-center m-10 w-10% min-h-screen border border-gray-300 rounded-lg">
-        <UserPlus className='m-10 w-10 h-10 bg-blue-100 text-blue-600 p-2 rounded-lg mb-0 -ml-30' />
+        <UserPlus className='m-10 w-10 h-10 bg-blue-100 text-blue-600 p-2 rounded-lg mb-0 md:-ml-30' />
         <div className='mt-3'>
           <h1 className='text-2xl font-bold'>Create Account</h1>
           <p>start by filling in your details</p>
